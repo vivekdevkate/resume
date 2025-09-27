@@ -1,103 +1,113 @@
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+/* Modern Resume UI Design */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
-  color: #2c3e50;
-  line-height: 1.7;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0eafc 100%);
+  color: #222;
   min-height: 100vh;
 }
-
-/* Navbar / Header */
+.hero {
+  text-align: center;
+  padding: 64px 20px 32px 20px;
+  background: linear-gradient(90deg, #e0eafc 60%, #fff 100%);
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: 0 8px 32px rgba(0,115,230,0.09);
+}
+.hero h1 {
+  font-size: 3em;
+  color: #0073e6;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.hero .tagline {
+  font-size: 1.25em;
+  color: #222;
+  margin-bottom: 22px;
+  font-style: italic;
+}
+.hero .actions a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 12px 28px;
+  background: #0073e6;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1.05em;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0,115,230,0.08);
+}
+.hero .actions a:hover {
+  background: #005bb5;
+  box-shadow: 0 4px 12px rgba(0,115,230,0.15);
+}
 header {
-  background: #fff;
-  padding: 22px 0;
-  position: fixed;
+  background-color: #fff;
+  position: sticky;
   top: 0;
   width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-  transition: background 0.3s;
+  z-index: 999;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.07);
 }
-
 .navbar {
   max-width: 1000px;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 24px;
+  height: 60px;
 }
-
-.navbar h1 {
-  font-size: 2em;
-  font-weight: bold;
-  color: #0073e6;
-  letter-spacing: 1px;
-}
-
 .nav-links a {
-  margin-left: 22px;
-  font-size: 1.08em;
-  color: #333;
-  padding: 5px 12px;
-  border-radius: 6px;
+  margin: 0 10px;
+  color: #0073e6;
+  font-weight: 600;
+  font-size: 1.07em;
+  text-decoration: none;
+  padding: 7px 18px;
+  border-radius: 7px;
   transition: background 0.2s, color 0.2s;
 }
-
 .nav-links a:hover,
 .nav-links a:focus {
   background: #e0eafc;
-  color: #0073e6;
-  text-decoration: none;
+  color: #005bb5;
 }
-
-/* Main Container */
 .container {
-  max-width: 1000px;
-  margin: 120px auto 60px;
-  padding: 0 24px;
+  max-width: 900px;
+  margin: 36px auto 60px;
+  padding: 0 18px;
 }
-
-/* Sections */
 section {
-  margin-bottom: 50px;
-  padding: 34px 28px;
+  margin-bottom: 36px;
+  padding: 32px 24px;
   background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0,115,230,0.07);
   transition: box-shadow 0.2s, transform 0.2s;
 }
-
 section:hover {
-  box-shadow: 0 12px 36px rgba(0,115,230,0.07);
-  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 38px rgba(0,115,230,0.15);
+  transform: translateY(-3px) scale(1.01);
 }
-
 .section-title {
-  font-size: 1.45em;
+  font-size: 1.4em;
   margin-bottom: 18px;
   color: #0073e6;
-  border-left: 5px solid #0073e6;
+  border-left: 6px solid #0073e6;
   padding-left: 14px;
+  font-weight: 700;
   letter-spacing: 0.5px;
 }
 ul {
   padding-left: 24px;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 .job-title, .degree {
-  font-weight: 600;
-  font-size: 1.12em;
+  font-weight: 700;
+  font-size: 1.08em;
   color: #1a2936;
 }
 .date {
@@ -106,22 +116,30 @@ ul {
   font-size: 0.97em;
   font-style: italic;
 }
+.job, .education {
+  margin-bottom: 18px;
+  transition: background 0.2s;
+}
+.job:hover, .education:hover {
+  background: #f7fbff;
+}
 footer {
   text-align: center;
-  padding: 26px 0 16px;
-  font-size: 0.98em;
-  background-color: #f4f4f4;
+  padding: 28px 0 14px;
+  font-size: 1em;
+  background: #f4f4f4;
   color: #666;
   letter-spacing: 0.2px;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
 }
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
     padding: 0 10px;
+    height: auto;
   }
   .nav-links {
     margin-top: 10px;
@@ -131,31 +149,24 @@ footer {
   }
   .nav-links a {
     display: block;
-    margin: 6px 0 6px 0;
+    margin: 6px 0;
     width: 100%;
   }
   .container {
     padding: 0 8px;
   }
   section {
-    padding: 20px 10px;
+    padding: 18px 8px;
   }
   .date {
     float: none;
     display: block;
     margin-top: 6px;
   }
+  .hero {
+    padding: 50px 8px 28px 8px;
+  }
 }
-
-/* Add subtle hover to job/education blocks */
-.job, .education {
-  transition: background 0.2s;
-}
-.job:hover, .education:hover {
-  background: #f7fbff;
-}
-
-/* Custom scrollbar for style */
 body::-webkit-scrollbar {
   width: 10px;
   background: #e0eafc;
